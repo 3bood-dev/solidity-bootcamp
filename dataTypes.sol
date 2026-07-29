@@ -28,4 +28,29 @@ contract MyContract{
     //_________________________________________
     string any = "eng abdallah";
     // هنكتب جمب string --> memory لو جوا function او لو هتتعامل مع فانكشن ك param
+    //_________________________________________
+    // use "immutable" if you need decleration without intiliztion
+    // we use it replacing to "constant"
+    address immutable owner;
+    constructor(address _owner)payable {
+        owner = _owner;
+    }
+    // and we cant change the immutable value like this !
+
+    // function a(address _owner)public view returns (address) {
+    //     owner = _owner ;
+    //     return owner;
+    // }
+    //_________________________________________
+    //State Variable Vs Local Variable 
+    //state variable : inside the contract but outside the Function 
+    //Local variable : inside the Function 
+    //stable variabel 
+    uint public num = 20 ; // stored in blockchain storage - persistant دائم
+    //local variable 
+    function loc() public returns(uint256) {
+        uint result = 10 ;//stored in memory - volatile ;
+        num = 10 ;
+        return result;
+    }
 }
