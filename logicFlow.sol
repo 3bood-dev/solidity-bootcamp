@@ -41,4 +41,13 @@ contract loops_statement{
         }
         return result;
     }
+    function sumNumbers(uint256 n) public pure returns (uint256) {
+        uint256 total = 0;
+
+        for (uint256 i = 1; i <= n; i++) {
+            total += i;
+        }
+
+        return total;
+    }
 }
