@@ -6,7 +6,7 @@ contract if_statement{
         if (num>0){
             return"positive";
         }
-         return "nigative";
+         return "negative";
     }
     function getGrade(uint256 grade) public pure returns (string memory){
         if (grade>90){
@@ -23,3 +23,22 @@ contract if_statement{
         }
         return "Fail" ; 
         }}
+        
+contract loops_statement{
+    function sum_numbers_using_if_statement() public pure returns(uint256){
+       uint256 result = 0;
+        for(uint256 i = 1 ; i<= 10;i++){
+            result = i + result; 
+        }
+        return result;
+        }
+    function sum_numbers_using_while_statement()public pure returns(uint256){
+        uint256 i  ;
+        uint256 result ;
+        while(i<=10){
+            result=result+i;
+            i++;
+        }
+        return result;
+    }
+}
