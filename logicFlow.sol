@@ -50,4 +50,13 @@ contract loops_statement{
 
         return total;
     }
+    function reducePrice(uint256 startPrice, uint256 minPrice) public pure returns (uint256) {
+        uint256 currentPrice = startPrice;
+
+        while (currentPrice > minPrice) {
+            currentPrice -= 10;
+        }
+
+        return currentPrice;
+    }
 }
