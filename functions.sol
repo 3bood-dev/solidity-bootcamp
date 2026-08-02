@@ -31,3 +31,29 @@ contract Function_state_mutability_keyword{
     }
 
 }
+// ____________________________________________________________
+// Variable_visibility_modifier --!
+contract Variable_visibility_modifier{
+    uint256 public price_1 = 100; // when you set a public variable , the IDE creats a Getter function with the same name by defult
+    uint256 internal price_2 = 200;
+    uint256 private price_3 = 300;
+    function all_visibility() public view {
+       console.log(price_1); 
+       console.log(price_2);
+       console.log(price_3);
+    }
+    }
+contract Variable_visibility_modifier_2 is Variable_visibility_modifier{
+      function all_visibility_without_private() public view {
+       console.log(price_1); 
+       console.log(price_2);
+      // console.log(price_3);
+    }
+}
+contract Variable_visibility_modifier_3{
+    function all_visibility_without_internal_and_private(address contractAddress) public view {
+       console.log(Variable_visibility_modifier(contractAddress).price_1()); 
+    //    console.log(price_2);
+    //    console.log(price_3);
+    }
+}
