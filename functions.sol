@@ -84,3 +84,17 @@ contract Function_visibility_modifier_2 is Function_visibility_modifier{
     }
 
 }
+//_______________________________________________
+//modifier explenation 
+contract Modifier_explination{
+    uint256 public PRICE = 100;
+    uint256 public check_of_modifier_state;
+    modifier check_price(){
+        require(msg.value>= PRICE,"your money is not enough");
+        _;
+        check_of_modifier_state++;
+    }
+    function buy_something()public check_price payable  {
+
+    }
+}
