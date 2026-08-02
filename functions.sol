@@ -57,3 +57,30 @@ contract Variable_visibility_modifier_3{
     //    console.log(price_3);
     }
 }
+
+//_______________________________________________________
+contract Function_visibility_modifier{
+    function func1()public {
+
+    }
+    function func2()internal {
+        
+    }
+    
+    function func3()private {
+        
+    }
+    
+    function func4()external {
+        
+    }
+}
+contract Function_visibility_modifier_2 is Function_visibility_modifier{
+    function func_num_test()public {
+        func1();
+        func2();
+        //func3():
+       // func4();
+    }
+
+}
