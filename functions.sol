@@ -98,3 +98,13 @@ contract Modifier_explination{
 
     }
 }
+
+//_______________________________________
+//constructor explenation
+contract constructor_Explenation{
+    // the contract use the constructor to run one time in the start of the code to ask for something important or to intiate values
+    uint256 public PRICE ;
+    constructor  ( uint256 _price){
+      PRICE = _price;
+    }
+}
