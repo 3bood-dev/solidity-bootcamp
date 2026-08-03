@@ -20,4 +20,14 @@ contract Structs_def{
         });
         return student_1;
     }
+    
+    function getName() public view returns(string memory) {
+        return student_1.student_name;
+    }
+    function updateName(string memory _name) public {
+        student_1.student_name = _name;
+    }
+    function deleteStudent() public {
+        delete student_1;
+    }
 }
