@@ -26,3 +26,26 @@ contract array_def{
         arr.pop();
     }
 }
+contract array_on_structs{
+    struct Student{
+        address student_address;
+        uint256 student_id ;
+        string student_name;
+        uint8 student_age;
+
+    }
+    Student[] public students;
+    function addStudent(uint256 _id , string memory _name , uint8 _age)public {
+        students.push( Student({
+            student_address : msg.sender,
+            student_name : _name ,
+            student_age : _age ,
+            student_id : _id 
+        }));
+
+    }
+    function delete_student(uint256 _index) public {
+        students[_index] = students[students.length -1];
+        students.pop();
+    }
+}
