@@ -18,4 +18,11 @@ contract array_def{
     function delete_Last_Element()public {
         arr.pop();
     }
+    
+    //how to delete element from anyware in the array 
+    // replace the index you want to delete with the last index then delete it 
+    function delete_element(uint256 _index)public {
+        arr[_index] = arr[arr.length -1];
+        arr.pop();
+    }
 }
