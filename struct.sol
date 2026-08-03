@@ -10,3 +10,14 @@ contract Structs_def{
     }
 
     Student  student_1;
+    //CRUD operations ! 
+
+    function CreateStudent(string memory _name , uint256 _id) public returns(Student memory){
+        student_1 = Student({
+            student_address: msg.sender,
+            student_name : _name,
+            student_id : _id
+        });
+        return student_1;
+    }
+}
