@@ -17,3 +17,13 @@ contract mapping_def{
     }
 
 }
+
+contract Nested_Mapping{
+    mapping(uint256 => mapping (string => uint256)) public votes;
+    function addVote(uint256 vote_id , string memory candidate_name, uint256 vote_count) public {
+        votes[vote_id][candidate_name]= vote_count;
+    }
+    function delete_vote(uint256 vote_id , string memory candidate_name) public {
+        votes[vote_id][candidate_name]--;
+    }
+}
