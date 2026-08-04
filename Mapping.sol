@@ -27,3 +27,19 @@ contract Nested_Mapping{
         votes[vote_id][candidate_name]--;
     }
 }
+
+contract mapping_with_array{
+    mapping(string => uint256[]) private grades;
+    function gettGrades(string memory _name ,uint256 _index ) public view returns(uint256){
+        return grades[_name][_index];
+    }
+    function addGrade(string memory _name , uint256 new_grade)public {
+        grades[_name].push(new_grade);
+    }
+    function delete_grade(string memory _name , uint256 _index )public {
+       delete grades[_name][_index];
+    }
+    function update_grade(string memory _name , uint256 _index , uint256 new_grade) public {
+        grades[_name][_index] = new_grade;
+    }
+}
