@@ -43,3 +43,23 @@ contract mapping_with_array{
         grades[_name][_index] = new_grade;
     }
 }
+
+contract mapping_with_structs{
+    struct STUDENT{
+        uint256 student_id;
+        address student_address;
+        string student_name;
+    }
+    mapping(address => STUDENT) public students;
+    function addStudent( uint256 _id , string memory _name) public {
+        students[msg.sender] = STUDENT({
+            student_address : msg.sender,
+            student_name : _name,
+            student_id : _id
+        });
+    }
+    function DeleteStudent(address _address) public {
+        delete students[_address];
+    }
+    
+    }
