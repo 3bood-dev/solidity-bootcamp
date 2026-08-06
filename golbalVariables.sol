@@ -41,6 +41,6 @@ contract block_methods{
     function print_block_methods()public view {
         console.log(block.timestamp);
         console.log(block.number);
-        console.log(block.gaslimit);
+
     }
 }
