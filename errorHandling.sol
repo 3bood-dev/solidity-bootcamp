@@ -17,3 +17,17 @@ contract ErrorHandling_func{
         require(msg.value >= PRICE,"the amout of ether not enough");
     }
 }
+
+contract using_error{
+    uint256 constant PRICE = 1 ether;
+    error using_error__NotEnoughFund(uint256 amount);
+    function revert_error()public payable{
+        if(msg.value <= PRICE){
+            revert using_error__NotEnoughFund({amount: msg.value});
+        }}
+
+    function require_error()public payable {
+        require(msg.value <= PRICE , using_error__NotEnoughFund({amount: msg.value}));
+    }
+    
+}
