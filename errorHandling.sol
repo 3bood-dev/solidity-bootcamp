@@ -31,3 +31,23 @@ contract using_error{
     }
     
 }
+ontract myowne{
+    // what we need here ? trying to recive money and take 1.5 ether from it and send back a rest of it 
+    // lets try now 
+    error transactionFailed();
+    uint256 constant PRICE = 1.5 ether;
+    uint256 public restOF;
+    address user_address;
+    constructor (){
+        user_address = msg.sender ;
+    }
+    function take_fund()public payable{
+       
+        restOF = msg.value - PRICE ;
+        (bool success,) = payable(user_address).call{value : restOF}("");
+        require(success, transactionFailed());
+    }
+    function viiieew()public view returns(uint256){
+        return address(this).balance;
+    }
+}
