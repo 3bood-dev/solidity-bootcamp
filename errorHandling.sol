@@ -31,7 +31,7 @@ contract using_error{
     }
     
 }
-ontract myowne{
+contract myowne{
     // what we need here ? trying to recive money and take 1.5 ether from it and send back a rest of it 
     // lets try now 
     error transactionFailed();
