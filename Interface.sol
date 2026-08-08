@@ -22,3 +22,21 @@ contract Dog is IAnimal{
         return "Woof";
     }
 }
+
+//____________________________________________________________________________
+//IMPORTANT FEATURE////// _______> can interact with external contracts
+contract A {
+    uint256 public counter;
+    function increaseByOne()public {
+        counter+=1;
+    }
+}
+interface IA{
+    function increaseByOne()external;
+}
+
+contract B {
+    function call_increase(address _contractAddress)public {
+        IA(_contractAddress).increaseByOne();
+    }
+}
