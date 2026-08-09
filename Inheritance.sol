@@ -13,3 +13,21 @@ contract B is A{
         return "hello from child";
     }
 }
+
+//_____________________________________
+//Abstract contract 
+abstract contract Animal{
+    function animalSound()public pure virtual returns(string memory);
+}
+contract Dog is Animal {
+    // you must but the abstract function because of error 
+    function animalSound()public pure override  returns(string memory){
+        return "Woof";
+    }
+}
+contract Cat is Animal {
+    function animalSound()public pure override returns(string memory){
+        return "Meow";
+    }
+    
+}
